@@ -1,9 +1,10 @@
 import './App.css';
-import SearchBar from './components/SearchBar';
+import HomePage from './pages/Home';
 
 function App() {
+
   return (
-      <SearchBar></SearchBar>
+      <HomePage/>
   );
 }
 

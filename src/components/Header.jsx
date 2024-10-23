@@ -1,14 +1,21 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchBar from "./SearchBar";
+import CreateNewPost from "./CreateNewPost";
 
 const Header = () => {
 
-    <Header className= "Header">
+    return(
+        <div className="d-flex justify-content-between alig-items-center p-3 bg-dark" style={{Width: '100px', height: '100px' }}>
 
-        <div className="Logo">
-            <img src= "/logoucu.png" alt= "logo"/>
-        </div>
+            <img src= "/logoucu.png" alt= "logo" className= "img-fluid"/>
+            
+            <SearchBar/>
 
-        <div className="searchbar"/>
+            <CreateNewPost/>
         
-    </Header>
-}
+        </div>
+    )
+};
+
+export default Header;
