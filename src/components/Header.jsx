@@ -1,8 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SearchBar from "./SearchBar";
-import CreateNewPost from "./CreateNewPost";
-import Profile from "./ProfileIcon";
+import SearchBar from "../atoms/SearchBar";
+import CreatePostIcon from "../atoms/CreatePostIcon";
+import ProfileIcon from "../atoms/ProfileIcon";
 
 const Header = () => {
 
@@ -18,9 +18,10 @@ const Header = () => {
             
             <SearchBar/>
 
-            <CreateNewPost/>
-
-            <Profile/>
+            <div  className="d-flex align-items-center gap-5 ">
+                <CreatePostIcon/>
+                <ProfileIcon/>
+            </div>
         
         </div>
     )

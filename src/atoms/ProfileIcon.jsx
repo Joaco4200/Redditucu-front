@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Profile = () =>{
+const ProfileIcon = () =>{
 
     return (
         <div className="d-flex align-items-center ">
@@ -15,4 +15,4 @@ const Profile = () =>{
     )
 }
 
-export default Profile;
+export default ProfileIcon;
