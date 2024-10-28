@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBar from "../atoms/SearchBar";
 import CreatePostIcon from "../atoms/CreatePostIcon";
 import ProfileIcon from "../atoms/ProfileIcon";
-//import LoginButton from "../atoms/LoginButton";
-//import LogoutButton from "../atoms/LogoutButton";
+import LogButton from "../atoms/LogButton";
 
 
 const Header = () => {
@@ -21,15 +20,14 @@ const Header = () => {
                 </div>
             </button>
             
-            
             <SearchBar/>
 
-            <div  className="d-flex align-items-center gap-5 ">
+            <div  className="d-flex align-items-center gap-3 ">
                 <CreatePostIcon/>
+                <LogButton/>
                 <ProfileIcon/>
             </div>
 
-        
         </div>
     )
 };
