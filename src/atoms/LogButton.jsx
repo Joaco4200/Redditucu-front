@@ -6,8 +6,6 @@ const LogButton = () =>{
     const {isAuthenticated} = useAuth0();
 
     return (isAuthenticated ? <LogoutButton/> : <LoginButton/>);
-    console.log("AAAAAAAAAAAAAAUTENTICADO");
-
 }
 
 export default LogButton;

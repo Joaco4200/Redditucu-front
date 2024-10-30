@@ -9,6 +9,7 @@ function App() {
     <Router>
       <Routes>
           <Route path= "/" element={<HomePage/>}/>
+          <Route path="/home-page" element={<HomePage />} />
           <Route path= "/create-post-page" element={<CreatePostPage/>}/>
       </Routes>
     </Router>
