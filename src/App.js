@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage';
 import CreatePostPage from './pages/CreatePostPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
           <Route path= "/" element={<HomePage/>}/>
           <Route path="/home-page" element={<HomePage />} />
           <Route path= "/create-post-page" element={<CreatePostPage/>}/>
+          <Route path= "/profile-page" element={<ProfilePage/>}/>
       </Routes>
     </Router>
   );
