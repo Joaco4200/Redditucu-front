@@ -9,7 +9,6 @@ const UcudditIcon = () => {
     }
 
     return(
-       
             <button className="btn" onClick={handleClick}>
                 <div className="d-flex align-items-center">
                     <img src= "/logoucu.png" alt= "logo" style={{width: '5vw', height: '5vw' }}/>
