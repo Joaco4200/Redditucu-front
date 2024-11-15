@@ -9,3 +9,8 @@ export async function getPosts(){
     const response= await axios.get('http://localhost:8080/getpost')
     return response.data;
 }
+
+export async function getPostByPostId(){
+    const response= await axios.get('http://localhost:8080/getpost/{postid}')
+    return response.data;
+}
