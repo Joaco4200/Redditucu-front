@@ -3,30 +3,43 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Header from "../components/Header";
 import HomeButton from "../atoms/HomeButton";
 import { useParams } from "react-router-dom";
-import { getComment, saveComment } from "../axios/axiosComment";
+import { getCommentByPostId, saveComment } from "../axios/axiosComment";
 import { getPostByPostId, getPosts } from "../axios/axiosPost";
 
 const SinglePostPage = ()=>{
-    const {user} = useAuth0()
-    const {postid} = useParams()
+
+    const {user} = useAuth0();
+    const {postid} = useParams();
+    const[post,SetPost] = useState();
+    const[comment,SetComment]= useState();
     const [content,SetContent] = useState("");
 
     const handleContentChange = (e)=> SetContent(e.target.value);
 
     ///OBTENER POST INDIVIDUAL CON EL USE PARAMS BYPOSTID Y {DESPUES} OBTENER LOS COMMENTS DE ESE POST.
-    
-    const handleCreateCommentButtonClick= async()=>{
-        const commentData={
-            user: {
-                auth0id:user.sub
-            },
-            post: {
-                postid: postid
-            },
-            content:content
+
+    useEffect(()=>{
+        const getPostAndComments= async()=>{
+            const postData= await getPostByPostId();
+            SetPost(postData);
+
+            const commentData= await getCommentByPostId();
+            SetComment(commentData);
         }
-        await saveComment(commentData);
-    }
+    }, [])
+    
+    // const handleCreateCommentButtonClick= async()=>{
+    //     const commentData={
+    //         user: {
+    //             auth0id:user.sub
+    //         },
+    //         post: {
+    //             postid: postid
+    //         },
+    //         content:content
+    //     }
+    //     await saveComment(commentData);
+    // }
 
     //poner el post correspondiente por su positd aca abajo.
     return(
@@ -37,15 +50,7 @@ const SinglePostPage = ()=>{
                     <HomeButton/>
                 </div>
                 <div className="col-10 d-flex justify-content-center mt-4"> 
-                    <div className="comment"> 
-                        <input 
-                            className=""
-                            type= "text"
-                            placeholder="Add comment..."
-                            value={content}
-                            onChange={handleContentChange}
-                        />
-                    </div>
+                    <Comment/>
                 </div>
             </div>
         </div>  
