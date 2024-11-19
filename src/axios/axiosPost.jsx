@@ -5,12 +5,12 @@ export async function savePost(postData){
     return response.data;
 }
 
-export async function getPosts(){
-    const response= await axios.get('http://localhost:8080/getpost')
+export async function getAllPosts(){
+    const response= await axios.get('http://localhost:8080/getAllPosts')
     return response.data;
 }
 
-export async function getPostByPostId(){
-    const response= await axios.get('http://localhost:8080/getpost/{postid}')
+export async function getPostByPostId(postId){
+    const response= await axios.get('http://localhost:8080/getPostById', { params: { postId } })
     return response.data;
 }

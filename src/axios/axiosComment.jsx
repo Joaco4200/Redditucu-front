@@ -5,7 +5,7 @@ export async function saveComment(commentData){
     return response.data;
 }
 
-export async function getCommentByPostId(){
-    const response= await axios.get("http://localhost:8080/getComment")
+export async function getCommentByPostId(postId){
+    const response= await axios.get("http://localhost:8080/getComment", { params: { postId } })
     return response.data;
 }

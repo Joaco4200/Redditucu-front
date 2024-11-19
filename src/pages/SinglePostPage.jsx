@@ -1,47 +1,33 @@
 import { useState,useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import Header from "../components/Header";
 import HomeButton from "../atoms/HomeButton";
 import { useParams } from "react-router-dom";
-import { getCommentByPostId, saveComment } from "../axios/axiosComment";
-import { getPostByPostId, getPosts } from "../axios/axiosPost";
+import { getCommentByPostId} from "../axios/axiosComment";
+import { getPostByPostId} from "../axios/axiosPost";
+import Post from "../components/Post";
+import CreateComment from "../components/CreateComment";
+import Comment from "../components/Comment";
 
 const SinglePostPage = ()=>{
-
-    const {user} = useAuth0();
-    const {postid} = useParams();
-    const[post,SetPost] = useState();
-    const[comment,SetComment]= useState();
-    const [content,SetContent] = useState("");
-
-    const handleContentChange = (e)=> SetContent(e.target.value);
-
-    ///OBTENER POST INDIVIDUAL CON EL USE PARAMS BYPOSTID Y {DESPUES} OBTENER LOS COMMENTS DE ESE POST.
+    
+    const {postId} = useParams();
+    const[post,setPost] = useState();
+    const[comments,setComments]= useState([]);
+    
 
     useEffect(()=>{
         const getPostAndComments= async()=>{
-            const postData= await getPostByPostId();
-            SetPost(postData);
+            const postData= await getPostByPostId(postId);
+            setPost(postData);
 
-            const commentData= await getCommentByPostId();
-            SetComment(commentData);
+            const commentData= await getCommentByPostId(postId);
+            setComments(commentData);
+        }    
+        if(postId){
+            getPostAndComments();
         }
-    }, [])
-    
-    // const handleCreateCommentButtonClick= async()=>{
-    //     const commentData={
-    //         user: {
-    //             auth0id:user.sub
-    //         },
-    //         post: {
-    //             postid: postid
-    //         },
-    //         content:content
-    //     }
-    //     await saveComment(commentData);
-    // }
+    }, [postId])
 
-    //poner el post correspondiente por su positd aca abajo.
     return(
         <div className="">
             <Header/>
@@ -50,11 +36,36 @@ const SinglePostPage = ()=>{
                     <HomeButton/>
                 </div>
                 <div className="col-10 d-flex justify-content-center mt-4"> 
-                    <Comment/>
+                    <div>
+                        {post ? (
+                            <Post title={post.title} content={post.content} created_at={post.created_at} postId={postId} user={post.user} />
+                        ) : (
+                            <p>Loading post...</p> 
+                        )}
+                        <div className="mt-1">
+                            <CreateComment 
+                                postId={postId} 
+                                onNewComment={(newComment) => setComments((allComments) => [...allComments, newComment])} 
+                            />
+                        </div>
+                        <div className="mt-4">
+                            {
+                                comments.map(comment=>{
+                                    const {postId, user, content, created_at} = comment;
+                                    
+                                    return(
+                                        <div className="p-1">
+                                            <Comment postId={postId} user={user} content={content} created_at={created_at}/>
+                                        </div>  
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>  
     )
 }
-
+ 
 export default SinglePostPage;

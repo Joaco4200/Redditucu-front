@@ -1,37 +1,18 @@
-import React, { useState } from "react";
-import { saveComment } from "../axios/axiosComment";
-import { useAuth0 } from "@auth0/auth0-react";
+import React from "react";
 
-const Comment = ()=>{
-
-    const {user} = useAuth0();
-    const [content,SetContent]= useState("");
-
-    const handleCreateCommentButtonClick= async()=>{
-        const commentData={
-            user: {
-                auth0id:user.sub
-            },
-            post: {
-                postid: postid
-            },
-            content:content
-        }
-        await saveComment(commentData);
-    }
+const Comment =({postId, content,user, created_at})=>{
 
     return(
-        <div>
-            <input
-                className=""
-                type= "text"
-                placeholder="Add comment..."
-                value={content}
-                onChange={handleContentChange}
-            />
-            <button className="btn btn-outline-light rounded-pill" onClick={handleCreateCommentButtonClick}>
-                Comment
-            </button>
+        <div className="border border-secondary rounded-3 p-2" style={{ width: '30vw', backgroundColor: '#f8f9fa', lineHeight: '1.3',}}>
+            <div className="d-flex gap-3 mb-1">
+                <h5 style={{ fontSize: '0.8rem', }}>{user.name}</h5>
+                <a style={{ fontSize: '0.8rem', }}>{created_at}</a>
+            </div>
+            <div>
+                <p className="text-muted" style={{ marginBottom: '0.5rem', fontSize: '0.9rem'}}>{content}</p>
+            </div>
         </div>
     )
 }
+
+export default Comment;

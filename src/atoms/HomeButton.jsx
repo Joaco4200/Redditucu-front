@@ -8,7 +8,7 @@ const HomeButton = ()=>{
     }
 
     return(
-        <button className="btn btn-outline-dark rounded-pill btn-lg mt-5" onClick={handleClick}>Home</button> 
+        <button className="btn btn-outline-dark rounded-pill btn-lg mt-5 fs-3 p-2"onClick={handleClick}>Home</button> 
     )
 }
 
