@@ -22,15 +22,15 @@ Arquitectura basada en "Atomic Design" y comunicacion con el backend mediane API
 
 /src  
 
-  /public              # Archivos estáticos como imágenes.  
+  /public              : Archivos estáticos como imágenes.  
   
-  /atoms               # Componentes atómicos reutilizables (Botones, Inputs, etc.)  
+  /atoms               : Componentes atómicos reutilizables (Botones, Inputs, etc.)  
   
-  /components          # Componentes más grandes que combinan átomos. (Header, Post, Comment, etc.) 
+  /components          : Componentes más grandes que combinan átomos. (Header, Post, Comment, etc.) 
   
-  /pages               # Páginas completas, cada una representando una vista.
+  /pages               : Páginas completas, cada una representando una vista.
   
-  /axios               # Funciones para interactuar con el backend.  
+  /axios               : Funciones para interactuar con el backend.  
 
 Arquitectura BackEnd
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,13 +38,13 @@ Arquitectura modular basada en Repository, Service, DTOs, Controllers, y Models.
 
 /src
 
-  /controllers       # Contiene clases que manejan las rutas y peticiones HTTP.
+  /controllers       : Contiene clases que manejan las rutas y peticiones HTTP.
   
-  /dtos              # Objetos de transferencia de datos que definen el formato de entrada y salida para mejorar la seguridad.
+  /dtos              : Objetos de transferencia de datos que definen el formato de entrada y salida para mejorar la seguridad.
   
-  /repositories      # Repositorios encargados de la interacción con la base de datos.
+  /repositories      : Repositorios encargados de la interacción con la base de datos.
   
-  /services          # Lógica de los metodos, donde realizo las operaciones con los datos.
+  /services          : Lógica de los metodos, donde realizo las operaciones con los datos.
   
-  /models            # Definición de las clases que representan las entidades en la base de datos.
+  /models            : Definición de las clases que representan las entidades en la base de datos.
 
