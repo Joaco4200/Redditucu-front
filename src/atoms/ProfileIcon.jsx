@@ -16,7 +16,7 @@ const ProfileIcon = () =>{
         <div className="d-flex align-items-center ">
 
             <button className="btn" onClick={handleClick}>
-                <img src={user ? user.picture : "/profile.png"} alt= "Profile image" style= {{width: '3vw', height: '5vh'}}/>
+                <img src={user ? user.picture : "/profile.png"} alt= "Profile image" style= {{width: '3vw', height: '5vh', borderRadius:'50%'}} />
             </button>
             
         </div>  
