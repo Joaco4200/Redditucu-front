@@ -17,7 +17,7 @@ const CreatePost = () => {
     
     const handlePostButtonClick = async()=> {
             if(!user){
-                setWarning("You must be logged")
+                setWarning("You must be logged to post")
                 return;
             }
 

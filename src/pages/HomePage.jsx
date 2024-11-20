@@ -29,7 +29,7 @@ const HomePage = () => {
     }, [user]);
 
     return (
-        <div className="">
+        <div>
             <Header/>
             <div className="d-flex" style={{height: '44.5vw'}}>
                 <div className="col-2 d-flex flex-column align-items-center justify-content-start border border-secondary border-bottom-0 "> 

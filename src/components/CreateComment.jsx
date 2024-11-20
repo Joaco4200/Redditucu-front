@@ -33,7 +33,7 @@ const CreateComment = ({postId, onNewComment})=>{
                 value={content}
                 onChange={handleContentChange}
             />
-            <button className="btn btn-outline-dark rounded-pill btn-sm" onClick={handleCreateCommentButtonClick}>
+            <button className="btn   btn-sm" onClick={handleCreateCommentButtonClick}>
                 Comment
             </button>
         </div>

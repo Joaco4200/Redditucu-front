@@ -29,14 +29,16 @@ const SinglePostPage = ()=>{
     }, [postId])
 
     return(
-        <div className="">
+        <div >
             <Header/>
             <div className="d-flex" style={{height: '44.5vw'}}>
                 <div className="col-2 d-flex flex-column align-items-center justify-content-start border border-secondary border-bottom-0"> 
-                    <HomeButton/>
+                    <a className="mt-5">
+                        <HomeButton/>
+                    </a>
                 </div>
                 <div className="col-10 d-flex justify-content-center mt-4"> 
-                    <div>
+                    <div style={{marginRight:'25rem'}}>
                         {post ? (
                             <Post title={post.title} content={post.content} created_at={post.created_at} postId={postId} user={post.user} />
                         ) : (
