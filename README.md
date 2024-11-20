@@ -21,6 +21,7 @@ Arquitectura FrontEnd
 Arquitectura basada en "Atomic Design" y comunicacion con el backend mediane API Rest.
 
 /src  
+
   /public              # Archivos estáticos como imágenes.  
   
   /atoms               # Componentes atómicos reutilizables (Botones, Inputs, etc.)  
@@ -36,6 +37,7 @@ Arquitectura BackEnd
 Arquitectura modular basada en Repository, Service, DTOs, Controllers, y Models.
 
 /src
+
   /controllers       # Contiene clases que manejan las rutas y peticiones HTTP.
   
   /dtos              # Objetos de transferencia de datos que definen el formato de entrada y salida para mejorar la seguridad.
