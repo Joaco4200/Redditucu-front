@@ -22,7 +22,7 @@ Arquitectura basada en "Atomic Design" y comunicacion con el backend mediane API
 
 /src  
 
-  /public              # Archivos estáticos como imágenes.  
+  /public     <br>         # Archivos estáticos como imágenes.  
   
   /atoms               # Componentes atómicos reutilizables (Botones, Inputs, etc.)  
   
