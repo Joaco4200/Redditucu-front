@@ -20,13 +20,16 @@ Arquitectura FrontEnd
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Arquitectura basada en "Atomic Design" y comunicacion con el backend mediane API Rest.
 
-/src
-  /public              # Archivos estáticos como imágenes.
-  ---
-  /atoms               # Componentes atómicos reutilizables (Botones, Inputs, etc.)
-  /components          # Componentes más grandes que combinan átomos. (Header,Post,Comment,etc.)
-  /pages               # Páginas completas, cada una representando una vista
-  /axios               # Funciones para interactuar con el backend.
+/src  
+  /public              # Archivos estáticos como imágenes.  
+  ---  
+  /atoms               # Componentes atómicos reutilizables (Botones, Inputs, etc.)  
+  ---  
+  /components          # Componentes más grandes que combinan átomos. (Header, Post, Comment, etc.)  
+  ---  
+  /pages               # Páginas completas, cada una representando una vista.  
+  ---  
+  /axios               # Funciones para interactuar con el backend.  
 
 Arquitectura BackEnd
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
