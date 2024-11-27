@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; //br: componente principal de enrutamiento. router: contenedor principal.
 import './App.css';
 import HomePage from './pages/HomePage';
 import CreatePostPage from './pages/CreatePostPage';
@@ -8,7 +8,7 @@ import SinglePostPage from './pages/SinglePostPage';
 function App() {
 
   return (
-    <Router>
+    <Router> 
       <Routes>
           <Route path= "/" element={<HomePage/>}/>
           <Route path="/home-page" element={<HomePage />} />
